@@ -19,8 +19,11 @@
     }
     var m = /^([a-z0-9-]+)\.github\.io$/i.exec(location.hostname);
     if (!m) return null;
-    var primero = location.pathname.split('/')[1] || '';
-    var repo = primero && !/\.html?$/.test(primero) ? primero : m[1] + '.github.io';
+    // Se mira dónde está este mismo archivo: "/github-carta.js" -> web en la raíz (repositorio
+    // usuario.github.io); "/algo/github-carta.js" -> web de proyecto (repositorio "algo")
+    var src = (document.currentScript && document.currentScript.src) || '';
+    var carpeta = src ? new URL(src).pathname.split('/').slice(1, -1) : [];
+    var repo = carpeta.length ? carpeta[0] : m[1].toLowerCase() + '.github.io';
     return { api: API, owner: m[1], repo: repo, rama: 'main' };
   }
 
