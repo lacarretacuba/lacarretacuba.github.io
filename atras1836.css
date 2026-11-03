@@ -1,0 +1,159 @@
+/* La Carreta · panel de administración
+   Misma madera y mismas letras que la web; aquí manda que todo se lea y se toque fácil. */
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+[hidden] { display: none !important; }
+
+/* ---------- Puerta ---------- */
+
+.puerta { min-height: 100svh; display: grid; place-items: center; padding: 2rem var(--gutter); }
+.puerta-caja {
+  width: min(24rem, 100%);
+  display: grid; gap: 0.6rem;
+  padding: 2.25rem 2rem 2rem;
+  background: var(--cal); color: var(--tabaco);
+  border-radius: 6px;
+  box-shadow: 0 28px 40px -18px rgba(0,0,0,0.65);
+}
+.puerta-caja .marca { font-size: 2.6rem; margin-bottom: 0.25rem; }
+.puerta-caja h1 { font-family: var(--f-estarcido); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.95rem; margin-bottom: 1rem; }
+.puerta-caja label { font-weight: 600; font-size: 0.92rem; }
+.puerta-caja input {
+  min-height: 3rem; padding: 0 0.9rem;
+  border: 1.5px solid rgba(62,35,20,0.3); border-radius: 4px; background: #fff;
+}
+.puerta-caja input:focus { outline: none; border-color: var(--tabaco); }
+.puerta-caja .btn { margin-top: 0.75rem; background: var(--tabaco); color: var(--cal); }
+.error { min-height: 1.2em; color: #a3301c; font-size: 0.9rem; font-weight: 600; }
+
+/* ---------- Barra superior ---------- */
+
+.barra {
+  position: sticky; top: 0; z-index: 30;
+  display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap;
+  padding: 0.75rem var(--gutter);
+  background: var(--tabaco); color: var(--cal);
+  box-shadow: 0 10px 24px -14px rgba(0,0,0,0.7);
+}
+.barra-titulo { display: flex; align-items: baseline; gap: 0.9rem; }
+.barra-titulo .marca { font-size: 1.9rem; }
+.barra-titulo span { font-family: var(--f-estarcido); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.8rem; opacity: 0.85; }
+.estado { margin-left: auto; font-size: 0.92rem; opacity: 0.85; }
+.estado.pendiente { opacity: 1; font-weight: 700; }
+.estado.pendiente::before { content: "● "; color: #f0b27a; }
+.barra-acciones { display: flex; gap: 0.6rem; }
+.btn-linea-claro { background: transparent; color: var(--cal); box-shadow: inset 0 0 0 1.5px rgba(250,247,242,0.5); }
+@media (hover: hover) { .btn-linea-claro:hover { box-shadow: inset 0 0 0 1.5px var(--cal); } }
+
+/* ---------- Cuerpo ---------- */
+
+.panel-cuerpo { padding: 2.5rem var(--gutter) 5rem; min-height: 100svh; }
+.panel-ancho { max-width: 64rem; margin: 0 auto; }
+
+.ayuda, .ajuste {
+  padding: 1.4rem 1.6rem; margin-bottom: 1.25rem;
+  background: rgba(255,255,255,0.7); border-radius: 6px;
+  box-shadow: inset 0 0 0 1px rgba(62,35,20,0.14);
+}
+.ayuda h2, .ajuste h2 { font-family: var(--f-estarcido); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.95rem; margin-bottom: 0.75rem; }
+.ayuda ol { margin: 0 0 0.75rem; padding-left: 1.3rem; display: grid; gap: 0.35rem; }
+.ayuda p, .panel-nota { color: var(--texto-2); font-size: 0.93rem; }
+code { font-size: 0.9em; background: var(--cal-sombra); padding: 0.1em 0.35em; border-radius: 3px; }
+
+.ajuste-fila { display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 0.5rem; }
+.ajuste-fila label { font-weight: 600; font-size: 0.92rem; }
+.ajuste-fila label + select { margin-right: 0.5rem; }
+.ajuste-fila input, .ajuste-fila select {
+  min-height: 2.75rem; padding: 0 0.7rem;
+  border: 1.5px solid rgba(62,35,20,0.3); border-radius: 4px; background: #fff;
+}
+.ajuste-fila input { width: 5.5rem; }
+.ajuste-fila > span { margin-right: 0.75rem; }
+
+.filtro { display: block; margin: 2rem 0 0.5rem; }
+.filtro input {
+  width: 100%; min-height: 3.1rem; padding: 0 1rem;
+  border: 1.5px solid rgba(62,35,20,0.3); border-radius: 4px; background: #fff; font-size: 1.05rem;
+}
+.filtro input:focus, .ajuste-fila input:focus, .ajuste-fila select:focus { outline: none; border-color: var(--tabaco); }
+
+.grupo-titulo { font-family: var(--f-rotulo); font-size: 3rem; line-height: 1; margin: 2.25rem 0 0.75rem; padding-top: 0.1em; }
+
+/* ---------- Secciones y platos ---------- */
+
+.seccion-admin {
+  margin-bottom: 0.6rem;
+  background: rgba(255,255,255,0.75); border-radius: 6px;
+  box-shadow: inset 0 0 0 1px rgba(62,35,20,0.14);
+}
+.seccion-admin summary {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: 1rem 1.25rem; cursor: pointer; list-style: none;
+}
+.seccion-admin summary::-webkit-details-marker { display: none; }
+.seccion-admin summary::after { content: "+"; font-size: 1.4rem; line-height: 1; width: 1.5rem; text-align: center; transition: transform 0.3s var(--ease); }
+.seccion-admin[open] summary::after { transform: rotate(45deg); }
+.sec-nombre { font-weight: 700; font-size: 1.1rem; }
+.sec-cuenta { margin-left: auto; color: var(--texto-2); font-size: 0.9rem; }
+
+.lista { padding: 0 1.25rem; }
+.fila {
+  display: grid;
+  grid-template-columns: minmax(0, 2.2fr) minmax(0, 0.9fr) minmax(0, 2.2fr) minmax(0, 1fr) auto;
+  gap: 0.6rem; align-items: end;
+  padding: 0.85rem 0; border-top: 1px dashed rgba(62,35,20,0.2);
+}
+.celda { display: grid; gap: 0.25rem; min-width: 0; }
+.celda-etiqueta { font-size: 0.75rem; font-weight: 600; color: var(--texto-2); }
+.celda input {
+  width: 100%; min-height: 2.6rem; padding: 0 0.65rem;
+  border: 1.5px solid rgba(62,35,20,0.22); border-radius: 4px; background: #fff;
+  transition: border-color 0.2s;
+}
+.celda input:focus { outline: none; border-color: var(--tabaco); }
+.celda input[aria-invalid="true"] { border-color: #b8361f; background: #fff3f0; }
+.c-precio input { font-family: var(--f-estarcido); font-weight: 700; font-size: 1.05rem; font-variant-numeric: tabular-nums; }
+.quitar {
+  width: 2.6rem; height: 2.6rem; border: 0; border-radius: 4px; cursor: pointer;
+  background: transparent; color: #8a3a26; font-size: 1.5rem; line-height: 1;
+  transition: background-color 0.2s;
+}
+.quitar:hover { background: #f6e1da; }
+.anadir { margin: 0.5rem 1.25rem 1.25rem; }
+
+@media (max-width: 760px) {
+  .barra-titulo span { display: none; }
+  .estado { order: 3; flex-basis: 100%; margin-left: 0; }
+  .barra-acciones { margin-left: auto; }
+  .fila { grid-template-columns: 1fr 1fr; }
+  .c-nombre, .c-en { grid-column: 1 / -1; }
+  .quitar { grid-column: 1 / -1; justify-self: end; width: auto; padding: 0 0.9rem; }
+  .quitar::after { content: " Quitar"; font-size: 0.9rem; }
+}
+
+/* ---------- Online / local ---------- */
+body:not([data-modo="online"]):not([data-modo="github"]) .solo-online { display: none; }
+body:not([data-modo="github"]) .solo-github { display: none !important; }
+body[data-modo="github"] .solo-servidor { display: none; }
+.recordar { display: flex; align-items: center; gap: 0.5rem; font-weight: 500; font-size: 0.9rem; }
+.recordar input { width: 18px; height: 18px; accent-color: var(--tabaco); }
+.puerta-ayuda { font-size: 0.85rem; color: #6b4a36; }
+body:not([data-modo="local"]) .solo-local { display: none; }
+.btn-linea-oscuro { background: transparent; color: var(--tabaco); box-shadow: inset 0 0 0 1.5px rgba(62,35,20,0.45); }
+@media (hover: hover) { .btn-linea-oscuro:hover { box-shadow: inset 0 0 0 1.5px var(--tabaco); } }
+.btn:disabled { opacity: 0.6; cursor: wait; }
+
+/* ---------- Copias de seguridad ---------- */
+.copias {
+  margin-top: 2.5rem; padding: 1.4rem 1.6rem;
+  background: rgba(255,255,255,0.7); border-radius: 6px;
+  box-shadow: inset 0 0 0 1px rgba(62,35,20,0.14);
+}
+.copias h2 { font-family: var(--f-estarcido); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.95rem; margin-bottom: 0.5rem; }
+.copias h3 { margin: 1.5rem 0 0.5rem; font-size: 0.95rem; font-weight: 700; }
+.copias-lista, .registro-lista { margin: 0.75rem 0 0; padding: 0; list-style: none; }
+.copia { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.6rem 0; border-top: 1px dashed rgba(62,35,20,0.2); }
+.copia-vacia, .registro-lista li { color: var(--texto-2); font-size: 0.92rem; padding: 0.3rem 0; }

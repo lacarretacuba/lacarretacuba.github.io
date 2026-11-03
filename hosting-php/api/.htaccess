@@ -1,0 +1,7 @@
+# /api/estado, /api/carta ... -> index.php?ruta=...
+Options -Indexes
+RewriteEngine On
+# Que la sesión (cabecera Authorization) llegue a PHP en cualquier hosting
+RewriteCond %{HTTP:Authorization} .
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteRule ^(estado|carta|sesion|copias|restaurar)/?$ index.php?ruta=$1 [QSA,L]

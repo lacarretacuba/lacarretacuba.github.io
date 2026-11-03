@@ -1,0 +1,9 @@
+{
+  "name": "la-carreta",
+  "private": true,
+  "type": "module",
+  "description": "Web de La Carreta. La función de netlify/functions guarda la carta en Netlify Blobs (npm install @netlify/blobs).",
+  "dependencies": {
+    "@netlify/blobs": "^11.1.7"
+  }
+}

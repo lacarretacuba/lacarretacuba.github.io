@@ -1,0 +1,184 @@
+/* La Carreta · la carta
+   Mismo oficio que la portada: madera, rotulista y estarcido. Las cifras se leen de un vistazo. */
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+/* ---------- Cabecera ---------- */
+
+.carta-cabecera {
+  position: relative; overflow: hidden;
+  padding: 9rem var(--gutter) 4.5rem;
+  display: grid; justify-items: start; gap: 0.25rem;
+}
+.carta-rotulo { font-size: clamp(4.5rem, 13vw, 9rem); margin-top: 0.4rem; }
+.carta-lema {
+  font-family: var(--f-estarcido); font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.14em; font-size: clamp(1rem, 1.6vw, 1.25rem); margin-top: 1rem;
+}
+.carta-nota { margin-top: 0.75rem; max-width: 30rem; color: var(--texto-2); }
+.carta-rueda {
+  position: absolute; z-index: -1; right: -9rem; top: 50%;
+  width: min(34rem, 80vw); aspect-ratio: 1; margin-top: max(-17rem, -40vw);
+  color: var(--cal); opacity: 0.16;
+  animation: girar 90s linear infinite;
+}
+@keyframes girar { to { rotate: 360deg; } }
+
+/* ---------- Índice fijo ---------- */
+
+.indice {
+  position: sticky; top: var(--alto-nav, 3.9rem); z-index: 40;
+  display: flex; align-items: center; gap: 1rem;
+  padding: 0.7rem var(--gutter);
+  background: var(--cal); color: var(--tabaco);
+  box-shadow: 0 1px 0 rgba(62,35,20,0.15), 0 14px 24px -18px rgba(62,35,20,0.6);
+}
+.grupos { display: flex; flex: none; padding: 0.25rem; border-radius: 6px; background: var(--cal-sombra); }
+.grupo-btn {
+  min-height: 2.5rem; padding: 0 1rem; border: 0; border-radius: 4px; cursor: pointer;
+  background: transparent; color: var(--tabaco);
+  font-family: var(--f-estarcido); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.85rem;
+  transition: background-color 0.25s var(--ease), color 0.25s var(--ease);
+}
+.grupo-btn[aria-selected="true"] { background: var(--tabaco); color: var(--cal); }
+.indice-secciones {
+  flex: 1; min-width: 0;
+  display: flex; gap: 0.35rem; overflow-x: auto; scrollbar-width: none;
+  mask-image: linear-gradient(90deg, #000 85%, transparent);
+}
+.indice-secciones::-webkit-scrollbar { display: none; }
+.indice-secciones a {
+  flex: none; padding: 0.45rem 0.75rem; border-radius: 4px;
+  text-decoration: none; font-weight: 500; font-size: 0.93rem; white-space: nowrap; color: #6b4a36;
+  transition: background-color 0.2s, color 0.2s;
+}
+.indice-secciones a:hover { color: var(--tabaco); background: var(--cal-sombra); }
+.indice-secciones a.activa { color: var(--tabaco); background: var(--cal-sombra); box-shadow: inset 0 -2px 0 var(--carmelita); }
+.indice { transition: background-color 0.45s var(--ease), color 0.45s var(--ease); }
+.indice.en-barra { background: var(--tabaco); color: var(--cal); box-shadow: 0 1px 0 rgba(0,0,0,0.3), 0 14px 24px -18px rgba(0,0,0,0.8); }
+.indice.en-cafe { background: #e6d4b5; }
+.indice.en-cafe .grupos { background: rgba(62,35,20,0.1); }
+.indice.en-cafe .indice-secciones a.activa { background: rgba(62,35,20,0.1); }
+.indice.en-barra .grupos { background: rgba(250,247,242,0.1); }
+.indice.en-barra .grupo-btn { color: var(--cal); }
+.indice.en-barra .grupo-btn[aria-selected="true"] { background: var(--cal); color: var(--tabaco); }
+.indice.en-barra .indice-secciones a { color: rgba(250,247,242,0.75); }
+.indice.en-barra .indice-secciones a:hover,
+.indice.en-barra .indice-secciones a.activa { color: var(--cal); background: rgba(250,247,242,0.1); box-shadow: inset 0 -2px 0 var(--cal); }
+.buscar { flex: none; }
+.buscar input {
+  width: 15rem; min-height: 2.6rem; padding: 0 0.9rem;
+  border: 1.5px solid rgba(62,35,20,0.25); border-radius: 4px;
+  background: #fff; color: var(--tabaco);
+  transition: border-color 0.2s, width 0.4s var(--ease);
+}
+.buscar input::placeholder { color: #8a6a55; }
+.buscar input:focus { outline: none; border-color: var(--tabaco); }
+
+/* ---------- Cuerpo de la carta ---------- */
+
+.carta { padding: clamp(3rem, 7vw, 5.5rem) var(--gutter) clamp(4rem, 9vw, 7rem); }
+.carta-cuerpo {
+  max-width: 76rem; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 30rem), 1fr));
+  column-gap: clamp(2.5rem, 6vw, 5.5rem); align-items: start;
+}
+.carta-sin-js { grid-column: 1 / -1; text-align: center; }
+
+/* Cada parte de la carta tiene su madera: cocina clara, barra oscura */
+.carta-cocina { --raya: rgba(62,35,20,0.22); --puntos: rgba(62,35,20,0.35); --resalte: rgba(138,90,56,0.25); }
+.carta-barra  { --raya: rgba(250,247,242,0.18); --puntos: rgba(250,247,242,0.35); --resalte: rgba(250,247,242,0.22); }
+.carta-barra { padding-top: clamp(1rem, 3vw, 2rem); border-top: 6px solid var(--carmelita); }
+.carta.vacio .carta-cuerpo { display: none; }
+/* Cafetería: papel de estraza, más informal que el comedor */
+.carta-cafe {
+  --fondo: #e6d4b5; --texto: var(--tabaco); --texto-2: #5b3c28;
+  --junta: rgba(62,35,20,0.12); --clara: rgba(255,255,255,0.12); --veta-opacidad: 0.25;
+  --raya: rgba(62,35,20,0.25); --puntos: rgba(62,35,20,0.4); --resalte: rgba(106,59,31,0.22);
+  border-top: 6px dashed var(--carmelita);
+}
+.carta-barra.vacio, .carta-cafe.vacio { display: none; }
+.carta-cocina.vacio { padding-block: 1.5rem; }
+
+/* Separador entre la cocina y la barra */
+.separador {
+  grid-column: 1 / -1;
+  display: grid; justify-items: center; gap: 0.5rem; text-align: center;
+  margin: 1.5rem 0 3.5rem;
+}
+.separador-rueda { width: 4.25rem; height: 4.25rem; color: var(--texto); --hueco: var(--fondo); }
+.separador .rotulo-medio { color: var(--texto); font-size: clamp(3.5rem, 9vw, 6.5rem); }
+.separador p { color: var(--texto-2); }
+
+.seccion {
+  margin: 0 0 3.25rem;
+  scroll-margin-top: 9rem;
+}
+.seccion-cabeza {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 1rem;
+  padding-bottom: 0.6rem; margin-bottom: 0.4rem;
+  border-bottom: 2px solid var(--texto);
+}
+.seccion-cabeza h2 { font-family: var(--f-rotulo); font-size: clamp(2.4rem, 4vw, 3.1rem); line-height: 1; padding-top: 0.1em; }
+.seccion-cabeza .estarcido { color: var(--texto-2); font-size: 0.78rem; }
+
+.item-fila { padding: 0.8rem 0; border-bottom: 1px dashed var(--raya); }
+.item-fila:last-child { border-bottom: 0; }
+.item-linea { display: flex; align-items: baseline; gap: 0.6rem; }
+.item-nombre { font-weight: 700; font-size: 1.06rem; line-height: 1.3; }
+.item-medida { font-weight: 400; color: var(--texto-2); font-size: 0.85rem; white-space: nowrap; margin-left: 0.3rem; }
+/* Puntos guía, como en una carta impresa */
+.item-puntos { flex: 1; min-width: 1.5rem; border-bottom: 2px dotted var(--puntos); transform: translateY(-0.3rem); }
+.item-precio {
+  flex: none;
+  font-family: var(--f-estarcido); font-weight: 700; font-size: 1.12rem; letter-spacing: 0.02em;
+  font-variant-numeric: tabular-nums;
+}
+.item-precio small { font-size: 0.68em; letter-spacing: 0.08em; margin-left: 0.2em; color: var(--texto-2); }
+.item-en { margin-top: 0.15rem; color: var(--texto-2); font-style: italic; font-size: 0.93rem; max-width: 34rem; }
+
+.item-fila.oculto, .seccion.oculta, .separador.oculto { display: none; }
+mark { background: var(--resalte); color: inherit; border-radius: 2px; padding: 0 0.1em; }
+
+.sin-resultados { text-align: center; color: var(--texto-2); font-size: 1.1rem; padding: 2rem 0; }
+
+/* ---------- Cierre ---------- */
+
+.carta-cierre {
+  padding: clamp(4.5rem, 9vw, 7rem) var(--gutter);
+  display: grid; justify-items: center; text-align: center; gap: 1rem;
+}
+.carta-cierre-texto { color: var(--texto-2); margin-bottom: 0.75rem; }
+
+/* El rótulo se pinta como a pincel al aparecer */
+.js .trazo { transition: clip-path 1.3s var(--ease); }
+.js .trazo.visto { clip-path: inset(-12% -6% -12% 0); }
+
+/* Entrada suave de las secciones */
+html.js .seccion.entra { opacity: 0; transform: translateY(18px); }
+.seccion { transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 900px) {
+  .indice { flex-wrap: wrap; row-gap: 0.6rem; }
+  .indice-secciones { order: 3; flex-basis: 100%; }
+  .buscar { flex: 1; }
+  .buscar input { width: 100%; }
+  .seccion { scroll-margin-top: 12rem; }
+}
+@media (max-width: 520px) {
+  .carta-cabecera { padding-top: 7.5rem; }
+  .grupos { flex: 1 1 100%; }
+  .grupo-btn { flex: 1; }
+  .buscar { flex-basis: 100%; }
+  .grupo-btn { padding: 0 0.75rem; font-size: 0.78rem; }
+  .item-medida { display: block; margin-left: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .carta-rueda { animation: none; }
+  html.js .seccion.entra { opacity: 1; transform: none; }
+}

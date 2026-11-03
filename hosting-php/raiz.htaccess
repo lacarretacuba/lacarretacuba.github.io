@@ -1,0 +1,27 @@
+# La Carreta en hosting con PHP (Apache). Este archivo va en la raíz de la web como ".htaccess".
+Options -Indexes
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Forzar https: quitar las "#" de las 3 líneas siguientes cuando el hosting ya tenga el certificado SSL activo
+  # RewriteCond %{HTTPS} off
+  # RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  # RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # /atras1836 sin ".html", igual que en Netlify
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.+?)/?$ $1.html [L]
+</IfModule>
+
+# El panel no se guarda en caché ni sale en Google
+<IfModule mod_headers.c>
+  <FilesMatch "^atras1836\.(html|js|css)$">
+    Header set Cache-Control "no-store"
+    Header set X-Robots-Tag "noindex, nofollow"
+    Header set X-Frame-Options "DENY"
+  </FilesMatch>
+</IfModule>

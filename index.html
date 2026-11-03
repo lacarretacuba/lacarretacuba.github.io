@@ -1,0 +1,386 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La Carreta · Restaurante cubano en el Vedado, La Habana</title>
+<meta name="description" content="La Carreta, restaurante cubano en el Vedado (Calle 21 esq. K, La Habana). Donde nació la Carreta original: cocina cubana, música en vivo y sitio para 127 comensales." data-en-content="La Carreta, Cuban restaurant in Vedado (21st and K, Havana). Home of the original Carreta: Cuban food, live music and room for 127 guests.">
+<meta name="theme-color" content="#3e2314">
+<link rel="icon" href="img/icono.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="img/icono-movil.jpg">
+<!-- Imagen y texto al compartir el enlace (WhatsApp, Facebook...). Al publicar, poner aquí la dirección completa de la imagen. -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="La Carreta">
+<meta property="og:title" content="La Carreta · Aquí sí sabe a Cuba">
+<meta property="og:description" content="Restaurante cubano en el Vedado, La Habana. Cocina cubana, música en vivo y noche romántica todos los jueves.">
+<meta property="og:image" content="img/compartir.jpg">
+<meta property="og:image:width" content="800">
+<meta property="og:image:height" content="420">
+<meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="fonts/fonts.css">
+<link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+
+<!-- Rueda de carreta: un solo dibujo, reutilizado en hero, platos, marquesina y pie -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <path id="radio" d="M293.500 46 L306.500 46 L311 250 L289 250 Z"/>
+  </defs>
+  <symbol id="rueda" viewBox="0 0 600 600">
+    <circle cx="300" cy="300" r="293" fill="none" stroke="currentColor" stroke-width="7"/>
+    <circle cx="300" cy="300" r="268" fill="none" stroke="currentColor" stroke-width="30"/>
+    <circle cx="300" cy="300" r="226" fill="none" stroke="currentColor" stroke-width="9"/>
+    <g fill="currentColor">
+      <use href="#radio"/>
+      <use href="#radio" transform="rotate(30 300 300)"/>
+      <use href="#radio" transform="rotate(60 300 300)"/>
+      <use href="#radio" transform="rotate(90 300 300)"/>
+      <use href="#radio" transform="rotate(120 300 300)"/>
+      <use href="#radio" transform="rotate(150 300 300)"/>
+      <use href="#radio" transform="rotate(180 300 300)"/>
+      <use href="#radio" transform="rotate(210 300 300)"/>
+      <use href="#radio" transform="rotate(240 300 300)"/>
+      <use href="#radio" transform="rotate(270 300 300)"/>
+      <use href="#radio" transform="rotate(300 300 300)"/>
+      <use href="#radio" transform="rotate(330 300 300)"/>
+    </g>
+    <circle cx="300" cy="300" r="64" fill="currentColor"/>
+    <circle cx="300" cy="300" r="76" fill="none" stroke="currentColor" stroke-width="8"/>
+    <circle cx="300" cy="300" r="20" style="fill:var(--hueco, #3e2314)"/>
+  </symbol>
+  <symbol id="flecha" viewBox="0 0 24 24">
+    <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+</svg>
+
+<a class="saltar" href="#reservar" data-en="Skip to booking">Saltar a reservar</a>
+
+<header class="nav" id="nav">
+  <a class="marca" href="#top" aria-label="La Carreta, inicio" data-en-aria-label="La Carreta, home">La Carreta</a>
+  <nav class="nav-links" aria-label="Principal" data-en-aria-label="Main">
+    <a href="#casa" data-en="The house">La casa</a>
+    <a href="#platos" data-en="Dishes">Platos</a>
+    <a href="carta.html" data-en="Menu">La carta</a>
+    <a href="#jueves" data-en="Thursdays">Jueves</a>
+    <a href="#voces" data-en="Reviews">Voces</a>
+    <a href="#reservar" data-en="Contact">Contacto</a>
+  </nav>
+  <button class="idioma-btn" type="button">EN</button>
+  <a class="btn btn-claro btn-mini" href="#reservar" data-en="Book">Reservar</a>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero tablones tablones-oscuro" aria-labelledby="hero-titulo">
+  <div class="hero-rueda" aria-hidden="true">
+    <svg viewBox="0 0 600 600" class="rueda" id="rueda-hero"><use href="#rueda"/></svg>
+  </div>
+
+  <div class="hero-texto">
+    <h1 id="hero-titulo" class="rotulo">
+      <span class="rotulo-linea r1"><span class="trazo">La</span></span>
+      <span class="rotulo-linea r2"><span class="trazo">Carreta</span></span>
+    </h1>
+    <p class="hero-lema" data-en="This is what Cuba tastes like.">Aquí sí sabe a Cuba.</p>
+    <p class="hero-lede" data-en="Cuban restaurant in Vedado, Havana. Home of the original Carreta: real food, live music and room for 127 guests.">Restaurante cubano en el Vedado, La Habana. Donde nació la Carreta original: cocina de verdad, música en vivo y sitio para 127 comensales.</p>
+  </div>
+
+  <aside class="tablilla" aria-label="Reservas" data-en-aria-label="Bookings">
+    <span class="cuerda cuerda-i" aria-hidden="true"></span>
+    <span class="cuerda cuerda-d" aria-hidden="true"></span>
+    <div class="tablilla-cuerpo">
+      <p class="tablilla-script" data-en="Shall we book?">¿Reservamos?</p>
+      <p class="estarcido" data-en="A table for tonight">Mesa para esta noche</p>
+      <a class="btn btn-oscuro" href="#reservar" data-en="Book a table">Reservar mesa <svg class="ico" aria-hidden="true"><use href="#flecha"/></svg></a>
+      <p class="tablilla-dir">Calle 21 esq. K, Vedado</p>
+    </div>
+  </aside>
+
+  <div class="marquesina" aria-hidden="true">
+    <div class="marquesina-fila">
+      <span>Ropa vieja</span><svg class="mini"><use href="#rueda"/></svg>
+      <span>Grillada del Corral</span><svg class="mini"><use href="#rueda"/></svg>
+      <span>Vaca frita</span><svg class="mini"><use href="#rueda"/></svg>
+      <span>Ajiaco criollo</span><svg class="mini"><use href="#rueda"/></svg>
+      <span>Masas fritas</span><svg class="mini"><use href="#rueda"/></svg>
+      <span>Mojito</span><svg class="mini"><use href="#rueda"/></svg>
+      <span>Ropa vieja</span><svg class="mini"><use href="#rueda"/></svg>
+      <span>Grillada del Corral</span><svg class="mini"><use href="#rueda"/></svg>
+      <span>Vaca frita</span><svg class="mini"><use href="#rueda"/></svg>
+      <span>Ajiaco criollo</span><svg class="mini"><use href="#rueda"/></svg>
+      <span>Masas fritas</span><svg class="mini"><use href="#rueda"/></svg>
+      <span>Mojito</span><svg class="mini"><use href="#rueda"/></svg>
+    </div>
+  </div>
+</section>
+
+<!-- LA CASA -->
+<section class="casa tablones tablones-claro" id="casa" aria-labelledby="casa-titulo">
+  <div class="casa-grid">
+    <div class="casa-texto">
+      <h2 id="casa-titulo" class="rotulo-medio"><span class="trazo" data-en="A Vedado corner that never goes quiet.">Una esquina del Vedado que no se calla.</span></h2>
+      <p class="casa-p" data-en="On 21st and K, the original Carreta is still a house where you eat like family, toast with friends and there is always something playing. Come hungry, bring your people and take your time.">En 21 y K, la Carreta original sigue siendo una casa donde se come como en familia, se brinda con amigos y siempre está sonando algo. Ven con hambre, con los tuyos y sin prisa.</p>
+      <ul class="estarcidos" aria-label="La casa en tres datos" data-en-aria-label="The house in three facts">
+        <li class="caja-estarcida"><span data-en="Capacity">Capacidad</span><strong data-en="127 guests">127 personas</strong></li>
+        <li class="caja-estarcida"><span data-en="Vibe">Ambiente</span><strong data-en="Live music">Música en vivo</strong></li>
+        <li class="caja-estarcida"><span data-en="Corner">Esquina</span><strong data-en="21st &amp; K, Vedado">21 y K, Vedado</strong></li>
+      </ul>
+    </div>
+
+    <figure class="ph ph-casa" data-slot="fachada-noche" style="--ratio:4/5">
+      <div class="ph-marco">
+        
+        <figcaption class="ph-etiqueta"><span data-en="Photo">Foto</span><strong data-en="Façade at night">Fachada de noche</strong></figcaption>
+      </div>
+    </figure>
+
+    <figure class="ph ph-casa-2" data-slot="equipo" style="--ratio:1/1">
+      <div class="ph-marco">
+        
+        <figcaption class="ph-etiqueta"><span data-en="Photo">Foto</span><strong data-en="The house team">El equipo de la casa</strong></figcaption>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<!-- PLATOS -->
+<section class="carga tablones tablones-oscuro" id="platos" aria-labelledby="platos-titulo">
+  <div class="carga-fijo">
+    <div class="carga-rueda" aria-hidden="true">
+      <svg viewBox="0 0 600 600" class="rueda" id="rueda-carga"><use href="#rueda"/></svg>
+    </div>
+    <header class="carga-cabecera">
+      <h2 id="platos-titulo" class="rotulo-medio"><span class="trazo" data-en="Best of the menu">Lo mejor de la carta</span></h2>
+      <p class="carga-sub" data-en="Six dishes from our menu to get you hungry. Prices in CUP.">Seis platos de nuestra carta para abrir el apetito. Precios en CUP.</p>
+    </header>
+
+    <div class="carga-pista" id="pista">
+      <article class="plato">
+        <figure class="ph" data-slot="plato-ropa-vieja" style="--ratio:4/3"><div class="ph-marco"><figcaption class="ph-etiqueta"><span data-en="Photo">Foto</span><strong>Ropa vieja carretera</strong></figcaption></div></figure>
+        <h3 class="plato-nombre">Ropa vieja carretera</h3>
+        <p data-en="Shredded beef stewed the Cuban way, with sofrito.">Res deshilachada y guisada a la cubana, con su sofrito.</p>
+        <p class="plato-precio"><span>120 g</span> <strong>5.000 CUP</strong></p>
+        <span class="chapa" data-en="Beef">Res</span>
+      </article>
+      <article class="plato">
+        <figure class="ph" data-slot="plato-vaca-frita" style="--ratio:4/3"><div class="ph-marco"><figcaption class="ph-etiqueta"><span data-en="Photo">Foto</span><strong>Vaca frita a la tradición</strong></figcaption></div></figure>
+        <h3 class="plato-nombre">Vaca frita a la tradición</h3>
+        <p data-en="Shredded beef crisped on the griddle, just like at home.">Res desmenuzada y dorada en la plancha, como se hace en casa.</p>
+        <p class="plato-precio"><span>120 g</span> <strong>5.000 CUP</strong></p>
+        <span class="chapa">Res</span>
+      </article>
+      <article class="plato">
+        <figure class="ph" data-slot="plato-grillada" style="--ratio:4/3"><div class="ph-marco"><figcaption class="ph-etiqueta"><span data-en="Photo">Foto</span><strong>Grillada del Corral</strong></figcaption></div></figure>
+        <h3 class="plato-nombre">Grillada del Corral</h3>
+        <p data-en="Pork steak, grilled chicken and slices of beef on one platter.">Bistec de cerdo, pollo grillé y lonjas de res en una misma fuente.</p>
+        <p class="plato-precio"><span>550 g</span> <strong>15.000 CUP</strong></p>
+        <span class="chapa" data-en="To share">Para compartir</span>
+      </article>
+      <article class="plato">
+        <figure class="ph" data-slot="plato-masas-fritas" style="--ratio:4/3"><div class="ph-marco"><figcaption class="ph-etiqueta"><span data-en="Photo">Foto</span><strong>Masas fritas a lo campestre</strong></figcaption></div></figure>
+        <h3 class="plato-nombre">Masas fritas a lo campestre</h3>
+        <p data-en="Fried pork chunks, creole style.">Masas de cerdo fritas al estilo criollo.</p>
+        <p class="plato-precio"><span>220 g</span> <strong>7.500 CUP</strong></p>
+        <span class="chapa" data-en="Pork">Cerdo</span>
+      </article>
+      <article class="plato">
+        <figure class="ph" data-slot="plato-ajiaco" style="--ratio:4/3"><div class="ph-marco"><figcaption class="ph-etiqueta"><span data-en="Photo">Foto</span><strong>Ajiaco criollo</strong></figcaption></div></figure>
+        <h3 class="plato-nombre">Ajiaco criollo</h3>
+        <p data-en="The traditional Cuban soup, thick and hearty.">La sopa tradicional cubana, espesa y de cuchara.</p>
+        <p class="plato-precio"><span>240 g</span> <strong>1.300 CUP</strong></p>
+        <span class="chapa" data-en="Starters">Entrantes</span>
+      </article>
+      <article class="plato">
+        <figure class="ph" data-slot="plato-mojito" style="--ratio:4/3"><div class="ph-marco"><figcaption class="ph-etiqueta"><span data-en="Photo">Foto</span><strong>Mojito tradicional</strong></figcaption></div></figure>
+        <h3 class="plato-nombre">Mojito tradicional</h3>
+        <p data-en="The classic creole mojito.">El mojito criollo de toda la vida.</p>
+        <p class="plato-precio"><span>360 ml</span> <strong>1.600 CUP</strong></p>
+        <span class="chapa" data-en="Cocktails">Coctelería</span>
+      </article>
+      <a class="plato plato-carta" href="carta.html">
+        <span class="estarcido" data-en="Want to see more?">¿Quieres ver más?</span>
+        <span class="plato-carta-script" data-en="The full menu">La carta completa</span>
+        <span class="btn btn-claro" data-en="Open the menu">Abrir la carta <svg class="ico" aria-hidden="true"><use href="#flecha"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CAFETERÍA: papel de estraza, como en la carta -->
+<section class="cafe-banda tablones tablones-claro" id="cafeteria" aria-labelledby="cafe-titulo">
+  <div class="cafe-grid">
+    <div class="cafe-texto">
+      <h2 id="cafe-titulo" class="rotulo-medio"><span class="trazo" data-en="The café">La cafetería</span></h2>
+      <p class="cafe-horario" data-en="8:00 am to 8:00 pm · behind Coppelia">8:00 am a 8:00 pm · detrás del Coppelia</p>
+      <p class="cafe-p" data-en="For a coffee, a sandwich or a pizza without sitting down to a full meal.">Para un café, un pan o una pizza sin sentarse a comer de mantel.</p>
+      <a class="btn btn-oscuro" href="carta.html#cafeteria" data-en="See the café menu">Ver la carta de la cafetería <svg class="ico" aria-hidden="true"><use href="#flecha"/></svg></a>
+    </div>
+    <ul class="cafe-lista" aria-label="Algunos precios de la cafetería" data-en-aria-label="Some café prices">
+      <li class="cafe-item" data-plato="Café"><span class="cafe-n" data-en="Cuban coffee">Café cubano</span><span class="cafe-puntos" aria-hidden="true"></span><strong class="cafe-precio">100 CUP</strong></li>
+      <li class="cafe-item" data-plato="Pan con lechón"><span class="cafe-n" data-en="Roast pork sandwich">Pan con lechón</span><span class="cafe-puntos" aria-hidden="true"></span><strong class="cafe-precio">1.500 CUP</strong></li>
+      <li class="cafe-item" data-plato="Pizza de queso gouda"><span class="cafe-n" data-en="Gouda cheese pizza">Pizza de queso gouda</span><span class="cafe-puntos" aria-hidden="true"></span><strong class="cafe-precio">650 CUP</strong></li>
+      <li class="cafe-item" data-plato="Completa de picadillo"><span class="cafe-n" data-en="Ground beef plate">Completa de picadillo</span><span class="cafe-puntos" aria-hidden="true"></span><strong class="cafe-precio">1.200 CUP</strong></li>
+    </ul>
+  </div>
+</section>
+
+<!-- JUEVES: noche romántica con Elioveliz -->
+<section class="jueves" id="jueves" aria-labelledby="jueves-titulo">
+  <!-- Guirnalda de bombillas: el cable está en el HTML, las bombillas las pone main.js -->
+  <div class="guirnalda" aria-hidden="true">
+    <svg viewBox="0 0 1200 110" preserveAspectRatio="none"><path id="cable" d="M-10 8 Q 150 92 300 34 Q 450 92 600 30 Q 750 92 900 34 Q 1050 92 1210 8"/></svg>
+    <div class="bombillas" id="bombillas"></div>
+  </div>
+  <div class="foco" aria-hidden="true"></div>
+  <div class="jueves-grid">
+    <figure class="jueves-foto">
+      <span class="clavo" aria-hidden="true"></span>
+      <div class="ph" data-slot="elioveliz" style="--ratio:4/5"><div class="ph-marco"><figcaption class="ph-etiqueta"><span data-en="Photo">Foto</span><strong data-en="Elioveliz on stage">Elioveliz en el escenario</strong></figcaption></div></div>
+    </figure>
+
+    <div class="jueves-texto">
+      <h2 id="jueves-titulo" class="rotulo-medio rotulo-grande"><span class="trazo" data-en="Romantic night">Noche romántica</span></h2>
+      <p class="jueves-cuando" data-en="Every Thursday at La Carreta">Todos los jueves en La Carreta</p>
+      <p class="jueves-artista">Elioveliz</p>
+      <p class="jueves-apodo" data-en="Cuba&#39;s José José">el José José de Cuba</p>
+      <p class="jueves-p" data-en="José José&#39;s ballads, live, in the voice of Elioveliz. A night for dinner for two and humming along to «Almohada» or «Gavilán o paloma».">Las baladas de José José en vivo, con la voz de Elioveliz. Una noche para cenar en pareja y cantar bajito «Almohada» o «Gavilán o paloma».</p>
+
+      <form class="boleto" id="boleto" novalidate>
+        <div class="boleto-fecha">
+          <span class="estarcido" data-en="Next Thursday">Próximo jueves</span>
+          <strong id="jueves-fecha">Este jueves</strong>
+        </div>
+        <dl class="boleto-datos">
+          <div><dt data-en="Time">Hora</dt><dd data-en="From 8:00 pm">Desde las 8:00 pm</dd></div>
+          <div><dt data-en="Entry">Entrada</dt><dd data-en="1,000 CUP per person">1.000 CUP por persona</dd></div>
+        </dl>
+        <div class="boleto-campos">
+          <div class="boleto-campo">
+            <label for="j-nombre" data-en="Booking name">A nombre de</label>
+            <input id="j-nombre" name="nombre" type="text" autocomplete="name" required placeholder="Nombre y apellido" data-en-placeholder="First and last name" aria-describedby="j-error">
+          </div>
+          <div class="boleto-campo">
+            <span class="boleto-etiqueta" id="j-lbl-personas" data-en="Guests">Personas</span>
+            <div class="boleto-contador" role="group" aria-labelledby="j-lbl-personas">
+              <button type="button" data-paso="-1" aria-label="Una persona menos" data-en-aria-label="One guest less">−</button>
+              <output id="j-personas" aria-live="polite">2</output>
+              <button type="button" data-paso="1" aria-label="Una persona más" data-en-aria-label="One guest more">+</button>
+            </div>
+          </div>
+        </div>
+        <p class="boleto-error" id="j-error" aria-live="polite"></p>
+        <p class="boleto-total" data-en="Total entry">Entrada total <strong id="j-total">2.000 CUP</strong></p>
+        <button class="btn btn-oscuro btn-grande" type="submit" data-en="Book on WhatsApp">Reservar por WhatsApp <svg class="ico" aria-hidden="true"><use href="#flecha"/></svg></button>
+        <p class="boleto-aviso" id="j-aviso" role="status" aria-live="polite"></p>
+      </form>
+      <a class="jueves-ig" href="https://www.instagram.com/eliovelizz/" target="_blank" rel="noopener" data-en="Hear him first on Instagram, @eliovelizz">Escúchalo antes en su Instagram, @eliovelizz</a>
+    </div>
+  </div>
+</section>
+
+<!-- VOCES -->
+<section class="voces tablones tablones-claro" id="voces" aria-labelledby="voces-titulo">
+  <header class="voces-cabecera">
+    <h2 id="voces-titulo" class="rotulo-medio"><span class="trazo" data-en="What the next table is saying">Lo que dicen en la mesa de al lado</span></h2>
+    <p class="sello-ejemplo sello-ejemplo-oscuro" data-en="Sample texts: replace with real reviews">Textos de ejemplo: sustituir por testimonios reales</p>
+  </header>
+  <div class="voces-colgadas">
+    <blockquote class="nota nota-1">
+      <span class="clavo" aria-hidden="true"></span>
+      <p class="nota-texto" data-en="We came for the vibe and stayed for the ropa vieja. Every time we are in Havana, we come back.">Llegamos por el ambiente y nos quedamos por la ropa vieja. Cada vez que pasamos por La Habana, volvemos.</p>
+      <footer><strong>Daniel M.</strong><span data-en="Visiting from Madrid">De visita desde Madrid</span></footer>
+    </blockquote>
+    <blockquote class="nota nota-2">
+      <span class="clavo" aria-hidden="true"></span>
+      <p class="nota-texto" data-en="The music, the service and the portions: that is how you welcome family. My birthday was a hit from start to finish.">La música, el trato y las raciones: así se recibe a la familia. Mi cumpleaños fue un acierto de principio a fin.</p>
+      <footer><strong>Yaneisy R.</strong><span data-en="Vedado local">Vecina del Vedado</span></footer>
+    </blockquote>
+    <blockquote class="nota nota-3">
+      <span class="clavo" aria-hidden="true"></span>
+      <p class="nota-texto" data-en="Ropa vieja just right and a properly strong mojito. We booked for eight and everything was perfect.">La ropa vieja en su punto y el mojito bien cargado. Reservamos para ocho y todo salió perfecto.</p>
+      <footer><strong>Camila y Rafa</strong><span data-en="Group of eight, Miami">Grupo de ocho, Miami</span></footer>
+    </blockquote>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="reservar tablones tablones-oscuro" id="reservar" aria-labelledby="reservar-titulo">
+  <div class="reservar-rueda" aria-hidden="true">
+    <svg viewBox="0 0 600 600" class="rueda" id="rueda-pie"><use href="#rueda"/></svg>
+  </div>
+
+  <div class="reservar-grid">
+    <div class="reservar-texto">
+      <h2 id="reservar-titulo" class="rotulo-medio rotulo-grande"><span class="trazo" data-en="Save me a table">Guárdame una mesa</span></h2>
+      <p class="reservar-p" data-en="Tell us when you are coming and how many you are. We open the WhatsApp chat with your booking already written.">Cuéntanos cuándo vienes y cuántos son. Te abrimos la conversación por WhatsApp con tu reserva ya escrita.</p>
+
+      <dl class="datos">
+        <div><dt data-en="Where">Dónde</dt><dd data-en-html="21st St. &amp;amp; K, Vedado&lt;br&gt;Havana, Cuba 10200">Calle 21 esq. K, Vedado<br>La Habana, Cuba 10200</dd></div>
+        <div><dt data-en="Bookings">Reservas</dt><dd><a href="https://wa.me/5350990383" target="_blank" rel="noopener">+53 5099 0383</a> <span class="pend">WhatsApp</span></dd></div>
+        <div><dt data-en="Hours">Horario</dt><dd data-en-html="Café: 8:00 am to 8:00 pm&lt;br&gt;Restaurant: &lt;span class=&quot;pend&quot;&gt;to be confirmed&lt;/span&gt;">Cafetería: 8:00 am a 8:00 pm<br>Restaurante: <span class="pend">por confirmar</span></dd></div>
+        <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/lacarreta_cuba/" target="_blank" rel="noopener">@lacarreta_cuba</a></dd></div>
+      </dl>
+
+      <figure class="ph ph-mapa" data-slot="mapa" style="--ratio:16/9">
+        <div class="ph-marco"><figcaption class="ph-etiqueta"><span data-en="Map">Mapa</span><strong>Calle 21 esq. K</strong></figcaption></div>
+      </figure>
+    </div>
+
+    <form class="ticket" id="form-reserva" novalidate>
+      <p class="estarcido" data-en="Booking ticket">Ticket de reserva</p>
+      <div class="campo">
+        <label for="f-nombre" data-en="Your name">Tu nombre</label>
+        <input id="f-nombre" name="nombre" type="text" autocomplete="name" required placeholder="Cómo te llamas" data-en-placeholder="Your name">
+        <small class="error" data-error="nombre"></small>
+      </div>
+      <div class="campo-fila">
+        <div class="campo">
+          <label for="f-fecha" data-en="Day">Día</label>
+          <input id="f-fecha" name="fecha" type="date" required>
+          <small class="error" data-error="fecha"></small>
+        </div>
+        <div class="campo">
+          <label for="f-hora" data-en="Time">Hora</label>
+          <input id="f-hora" name="hora" type="time" required>
+          <small class="error" data-error="hora"></small>
+        </div>
+      </div>
+      <div class="campo">
+        <label for="f-personas" data-en="Guests">Personas</label>
+        <select id="f-personas" name="personas" required>
+          <option value="2" data-en="2 guests">2 personas</option><option value="3" data-en="3 guests">3 personas</option><option value="4" data-en="4 guests">4 personas</option>
+          <option value="5" data-en="5 guests">5 personas</option><option value="6" data-en="6 guests">6 personas</option><option value="8" data-en="8 guests">8 personas</option>
+          <option value="10" data-en="10 guests">10 personas</option><option value="12" data-en="12 or more">12 o más</option>
+        </select>
+      </div>
+      <div class="campo">
+        <label for="f-notas" data-en-html="Anything we should know &lt;span class=&quot;opc&quot;&gt;(optional)&lt;/span&gt;">Algo que debamos saber <span class="opc">(opcional)</span></label>
+        <textarea id="f-notas" name="notas" rows="3" placeholder="Cumpleaños, alergias, mesa cerca de la música…" data-en-placeholder="Birthday, allergies, table near the music…"></textarea>
+      </div>
+      <button class="btn btn-oscuro btn-grande" type="submit" data-en="Send on WhatsApp">Enviar por WhatsApp <svg class="ico" aria-hidden="true"><use href="#flecha"/></svg></button>
+      <p class="ticket-aviso" id="ticket-aviso" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="pie tablones tablones-claro">
+  <p class="pie-marca">La Carreta</p>
+  <p class="pie-lema" data-en="This is what Cuba tastes like.">Aquí sí sabe a Cuba.</p>
+  <p class="pie-menudo" data-en="21st St. &amp; K, Vedado, Havana ·">Calle 21 esq. K, Vedado, La Habana · <a href="https://www.instagram.com/lacarreta_cuba/" target="_blank" rel="noopener">@lacarreta_cuba</a></p>
+</footer>
+
+<script src="idioma.js"></script>
+<script src="js/gsap.min.js"></script>
+<script src="js/ScrollTrigger.min.js"></script>
+<script src="carta-datos.js"></script>
+<script src="carta-online.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

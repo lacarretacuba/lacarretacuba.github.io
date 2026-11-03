@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Administrar la carta · La Carreta</title>
+<meta name="theme-color" content="#3e2314">
+<link rel="icon" href="img/icono.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="img/icono-movil.jpg">
+<link rel="stylesheet" href="fonts/fonts.css">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="atras1836.css">
+</head>
+<body class="admin">
+
+<!-- Entrada: online la clave se comprueba en el servidor de Netlify; en local es de cortesía (ver atras1836.js) -->
+<section class="puerta tablones tablones-oscuro" id="puerta">
+  <form class="puerta-caja" id="puerta-form">
+    <p class="marca">La Carreta</p>
+    <h1>Administrar la carta</h1>
+    <label for="clave">Clave</label>
+    <input type="password" id="clave" autocomplete="current-password" required>
+    <label class="recordar solo-github"><input type="checkbox" id="recordar"> Recordar en este dispositivo</label>
+    <p class="puerta-ayuda solo-github" id="puerta-ayuda" hidden>La llave se crea en GitHub, una sola vez. Si no la tienes, pídesela a quien hizo la web.</p>
+    <p class="error" id="puerta-error" role="alert"></p>
+    <button class="btn btn-claro btn-grande" type="submit">Entrar</button>
+  </form>
+</section>
+
+<div class="panel" id="panel" hidden>
+  <header class="barra">
+    <div class="barra-titulo">
+      <p class="marca">La Carreta</p>
+      <span>Administrar la carta</span>
+    </div>
+    <p class="estado" id="estado" role="status" aria-live="polite">Sin cambios</p>
+    <div class="barra-acciones">
+      <a class="btn btn-linea-claro btn-mini" href="carta.html" target="_blank" rel="noopener">Ver la carta</a>
+      <button class="btn btn-claro btn-mini" type="button" id="guardar">Guardar la carta</button>
+      <button class="btn btn-linea-claro btn-mini" type="button" id="salir">Salir</button>
+    </div>
+  </header>
+
+  <main class="tablones tablones-claro panel-cuerpo">
+    <div class="panel-ancho">
+      <section class="ayuda">
+        <h2>Cómo funciona</h2>
+        <ol class="solo-online">
+          <li>Cambia nombres, medidas, descripciones o precios. Puedes añadir o quitar platos.</li>
+          <li class="solo-servidor">Pulsa <strong>Guardar la carta</strong>. Los cambios se ven al momento en la carta y en la portada.</li>
+          <li class="solo-github">Pulsa <strong>Guardar la carta</strong>. GitHub vuelve a publicar la web y los cambios se ven en 1 o 2 minutos.</li>
+          <li>Si te equivocas, abajo en <strong>Copias de seguridad</strong> puedes volver a la carta de antes.</li>
+        </ol>
+        <ol class="solo-local">
+          <li>Cambia nombres, medidas, descripciones o precios. Puedes añadir o quitar platos.</li>
+          <li>Pulsa <strong>Guardar la carta</strong>. Se guarda el archivo <code>carta-datos.js</code>.</li>
+          <li>Ese archivo debe quedar dentro de la carpeta <code>la-carreta</code>, sustituyendo al anterior. Recarga la carta y verás los cambios.</li>
+        </ol>
+        <p>Lo que vas cambiando se recuerda en este navegador hasta que guardes, aunque cierres la página.</p>
+      </section>
+
+      <section class="ajuste" aria-labelledby="ajuste-titulo">
+        <h2 id="ajuste-titulo">Subir o bajar todos los precios</h2>
+        <div class="ajuste-fila">
+          <label for="ajuste-pct">Porcentaje</label>
+          <input type="number" id="ajuste-pct" step="1" value="10" inputmode="numeric">
+          <span>%</span>
+          <label for="ajuste-redondeo">Redondear a</label>
+          <select id="ajuste-redondeo">
+            <option value="1">1 CUP</option>
+            <option value="10">10 CUP</option>
+            <option value="50" selected>50 CUP</option>
+            <option value="100">100 CUP</option>
+          </select>
+          <button class="btn btn-oscuro btn-mini" type="button" id="ajuste-aplicar">Aplicar a toda la carta</button>
+        </div>
+        <p class="panel-nota">Usa un número negativo para bajar (por ejemplo −5).</p>
+      </section>
+
+      <label class="filtro">
+        <span class="visually-hidden">Buscar un plato</span>
+        <input type="search" id="filtro" placeholder="Buscar un plato para editarlo…">
+      </label>
+
+      <div id="secciones"></div>
+
+      <section class="copias solo-online" aria-labelledby="copias-titulo">
+        <h2 id="copias-titulo">Copias de seguridad</h2>
+        <p class="panel-nota">Cada vez que guardas, la carta anterior queda aquí. Se guardan las últimas 30.</p>
+        <ul class="copias-lista" id="copias-lista"></ul>
+        <h3>Últimos cambios</h3>
+        <ul class="registro-lista" id="registro-lista"></ul>
+      </section>
+    </div>
+  </main>
+</div>
+
+<script src="carta-datos.js"></script>
+<script src="github-carta.js"></script>
+<script src="atras1836.js"></script>
+</body>
+</html>

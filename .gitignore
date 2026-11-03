@@ -1,0 +1,7 @@
+# Lo que NO se sube a GitHub (la web es pública: aquí no va nada privado ni de desarrollo)
+node_modules/
+.netlify/
+.impeccable/
+PRODUCT.md
+DESIGN.md
+hosting-php/api/datos/config.php

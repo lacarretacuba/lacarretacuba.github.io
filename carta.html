@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La carta · La Carreta, restaurante cubano en el Vedado</title>
+<meta name="description" content="La carta completa de La Carreta: entrantes, platos criollos, postres, café, coctelería, rones cubanos y cafetería. Precios en CUP." data-en-content="The full menu of La Carreta: Cuban dishes, desserts, coffee, cocktails, Cuban rum and café. Prices in CUP.">
+<meta name="theme-color" content="#3e2314">
+<link rel="icon" href="img/icono.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="img/icono-movil.jpg">
+<!-- Imagen y texto al compartir el enlace (WhatsApp, Facebook...). Al publicar, poner aquí la dirección completa de la imagen. -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="La Carreta">
+<meta property="og:title" content="La carta · La Carreta">
+<meta property="og:description" content="Platos criollos, coctelería, rones cubanos y cafetería. Precios en CUP.">
+<meta property="og:image" content="img/compartir.jpg">
+<meta property="og:image:width" content="800">
+<meta property="og:image:height" content="420">
+<meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="fonts/fonts.css">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="carta.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <path id="radio" d="M293.500 46 L306.500 46 L311 250 L289 250 Z"/>
+  </defs>
+  <symbol id="rueda" viewBox="0 0 600 600">
+    <circle cx="300" cy="300" r="293" fill="none" stroke="currentColor" stroke-width="7"/>
+    <circle cx="300" cy="300" r="268" fill="none" stroke="currentColor" stroke-width="30"/>
+    <circle cx="300" cy="300" r="226" fill="none" stroke="currentColor" stroke-width="9"/>
+    <g fill="currentColor">
+      <use href="#radio"/>
+      <use href="#radio" transform="rotate(30 300 300)"/>
+      <use href="#radio" transform="rotate(60 300 300)"/>
+      <use href="#radio" transform="rotate(90 300 300)"/>
+      <use href="#radio" transform="rotate(120 300 300)"/>
+      <use href="#radio" transform="rotate(150 300 300)"/>
+      <use href="#radio" transform="rotate(180 300 300)"/>
+      <use href="#radio" transform="rotate(210 300 300)"/>
+      <use href="#radio" transform="rotate(240 300 300)"/>
+      <use href="#radio" transform="rotate(270 300 300)"/>
+      <use href="#radio" transform="rotate(300 300 300)"/>
+      <use href="#radio" transform="rotate(330 300 300)"/>
+    </g>
+    <circle cx="300" cy="300" r="64" fill="currentColor"/>
+    <circle cx="300" cy="300" r="76" fill="none" stroke="currentColor" stroke-width="8"/>
+    <circle cx="300" cy="300" r="20" style="fill:var(--hueco, #3e2314)"/>
+  </symbol>
+  <symbol id="flecha" viewBox="0 0 24 24">
+    <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+</svg>
+
+<header class="nav solida" id="nav">
+  <a class="marca" href="index.html" aria-label="La Carreta, volver al inicio" data-en-aria-label="La Carreta, back to home">La Carreta</a>
+  <nav class="nav-links" aria-label="Principal" data-en-aria-label="Main">
+    <a href="index.html#casa" data-en="The house">La casa</a>
+    <a href="carta.html" aria-current="page" data-en="Menu">La carta</a>
+    <a href="index.html#jueves" data-en="Thursdays">Jueves</a>
+    <a href="index.html#reservar" data-en="Contact">Contacto</a>
+  </nav>
+  <button class="idioma-btn" type="button">EN</button>
+  <a class="btn btn-claro btn-mini" href="index.html#reservar" data-en="Book">Reservar</a>
+</header>
+
+<main id="top">
+
+  <!-- Cabecera: el letrero de la carta -->
+  <section class="carta-cabecera tablones tablones-oscuro" aria-labelledby="carta-titulo">
+    <div class="carta-rueda" aria-hidden="true"><svg viewBox="0 0 600 600" class="rueda"><use href="#rueda"/></svg></div>
+    <h1 id="carta-titulo" class="rotulo carta-rotulo"><span class="trazo" data-en="The menu">La carta</span></h1>
+    <p class="carta-lema" data-en="This is what Cuba tastes like.">Aquí sí sabe a Cuba.</p>
+    <p class="carta-nota" data-en="Prices in Cuban pesos (CUP). If you have any allergies, please tell us before ordering.">Precios en pesos cubanos (CUP). Si tienes alguna alergia, avísanos antes de pedir.</p>
+  </section>
+
+  <!-- Índice fijo y buscador -->
+  <div class="indice" id="indice">
+    <div class="grupos" role="tablist" aria-label="Parte de la carta" data-en-aria-label="Menu part">
+      <button type="button" class="grupo-btn" role="tab" aria-selected="true" data-grupo="cocina" data-en="Kitchen">Cocina</button>
+      <button type="button" class="grupo-btn" role="tab" aria-selected="false" data-grupo="bebidas" data-en="Bar">La barra</button>
+      <button type="button" class="grupo-btn" role="tab" aria-selected="false" data-grupo="cafeteria" data-en="Café">Cafetería</button>
+    </div>
+    <nav class="indice-secciones" id="indice-secciones" aria-label="Secciones de la carta" data-en-aria-label="Menu sections"></nav>
+    <label class="buscar">
+      <span class="visually-hidden" data-en="Search the menu">Buscar en la carta</span>
+      <input type="search" id="buscar" placeholder="Buscar: mojito, ropa vieja…" data-en-placeholder="Search: mojito, ropa vieja…" autocomplete="off">
+    </label>
+  </div>
+
+  <div class="carta carta-cocina tablones tablones-claro" id="bloque-cocina">
+    <div class="carta-cuerpo" id="carta-cuerpo">
+      <noscript><p class="carta-sin-js">Para ver la carta, activa JavaScript en tu navegador.</p></noscript>
+    </div>
+    <p class="sin-resultados" id="sin-resultados" hidden data-en="Nothing found with that name. Try another word.">No encontramos nada con ese nombre. Prueba con otra palabra.</p>
+  </div>
+
+  <!-- La barra: otra madera, para que se note que cambias de parte -->
+  <div class="carta carta-barra tablones tablones-oscuro" id="bloque-barra">
+    <div class="carta-cuerpo"></div>
+  </div>
+
+  <!-- La cafetería: papel de estraza, más informal -->
+  <div class="carta carta-cafe tablones tablones-claro" id="bloque-cafeteria">
+    <div class="carta-cuerpo"></div>
+  </div>
+
+  <!-- Cierre: reservar -->
+  <section class="carta-cierre tablones tablones-oscuro">
+    <p class="rotulo-medio"><span class="trazo" data-en="Mouth watering yet?">¿Ya se te hizo la boca agua?</span></p>
+    <p class="carta-cierre-texto" data-en="Book your table and arrive knowing what you'll order.">Reserva tu mesa y llega con el plato decidido.</p>
+    <a class="btn btn-claro" href="index.html#reservar" data-en="Book a table">Reservar mesa <svg class="ico" aria-hidden="true"><use href="#flecha"/></svg></a>
+  </section>
+</main>
+
+<footer class="pie tablones tablones-claro">
+  <p class="pie-marca">La Carreta</p>
+  <p class="pie-lema" data-en="This is what Cuba tastes like.">Aquí sí sabe a Cuba.</p>
+  <p class="pie-menudo" data-en="21st St. &amp; K, Vedado, Havana ·">Calle 21 esq. K, Vedado, La Habana · <a href="https://www.instagram.com/lacarreta_cuba/" target="_blank" rel="noopener">@lacarreta_cuba</a></p>
+</footer>
+
+<script src="idioma.js"></script>
+<script src="carta-datos.js"></script>
+<script src="carta-online.js"></script>
+<script src="carta.js"></script>
+</body>
+</html>
